@@ -1,4 +1,5 @@
-// Search Form
+//   Code for \PriceWise\src\components\Header\SearchForm\index.js
+
 import React from 'react';
 import PropTypes from 'prop-types';
 

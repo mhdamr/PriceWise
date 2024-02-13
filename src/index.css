@@ -1,13 +1,55 @@
+/*   Code for \PriceWise\src\index.css   */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 :root {
   --orange: #ff7800;
+  --cyan: #00ADB5;
   --black: #130f40;
   --light-color: #666;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   --border: 0.2rem solid rgba(0, 0, 0, 0.1);
   --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
   --outline-hover: 0.2rem solid var(--black);
+
+
+  /*   Custome Colors for Dark Mode  */
+  --background-color-dark: #393E46;
+  --background-color-darker: #222831;
+  --text-color-dark: #EEEEEE;
+
+ /*   Custome Colors for Dark Mode  */
+  --background-color-light: #dddddd;
+  --background-color-lighter: #ebebeb;
+  --text-color-light: #000;
 }
+
+.light-mode {
+  --background-color-1: var(--background-color-lighter);
+  --background-color-2: var(--background-color-light);
+  --text-color: var(--text-color-light);
+}
+
+.dark-mode {
+  --background-color-1: var(--background-color-darker);
+  --background-color-2: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+}
+
+
+/*   Use this for root css files  */
+.light {
+  --background-color-for-root-1: var(--background-color-lighter);
+  --background-color-for-root-2: var(--background-color-light);
+  --text-color-for-root: var(--text-color-light);
+}
+
+.dark {
+  --background-color-for-root-1: var(--background-color-darker);
+  --background-color-for-root-2: var(--background-color-dark);
+  --text-color-for-root: var(--text-color-dark);
+}
+/* -------------------------------- */
+
 * {
   text-transform: capitalize;
   font-family: 'Poppins', sans-serif;
@@ -17,7 +59,6 @@
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  transition: all linear 0.2s;
 }
 html {
   font-size: 62.5%;
@@ -30,31 +71,33 @@ html {
   display: inline-block;
   padding: 0.8rem 3rem;
   font-size: 1.7rem;
-  color: var(--black);
-  border: 0.2rem solid var(--black);
+  color: var(--text-color-for-root);
+  border: 0.2rem solid var(--text-color-for-root);
   border-radius: 0.5rem;
   cursor: pointer;
   background: none;
 }
 .btn:hover {
   color: #fff;
-  background: var(--orange);
+  background: var(--cyan);
 }
 section,
 footer {
   padding: 2rem 9%;
 }
+
 body {
-  background: #eee;
+  background: var(--background-color-for-root-2);
 }
+
 .heading {
   text-align: center;
   font-size: 3.5rem;
-  color: var(--black);
+  color: var(--text-color-for-root);
   padding: 2rem 0 3rem 0;
 }
 .heading span {
-  background: var(--orange);
+  background: var(--cyan);
   color: #fff;
   display: inline-block;
   padding: 0.5rem 3rem;

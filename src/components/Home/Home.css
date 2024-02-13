@@ -1,0 +1,21 @@
+/* Code for \PriceWise\src\components\Home\Home.css */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .home h1 {
+    font-size: 2.5rem;
+    color: var(--orange);
+  }
+  
+  .home p {
+    font-size: 1.5rem;
+    color: var(--black);
+  }
+  

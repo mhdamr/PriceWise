@@ -1,6 +1,8 @@
+/*   Code for \PriceWise\src\components\Header\Navbar\Navbar.css   */
+
 .header .navbar a {
   display: inline-block;
-  color: var(--black);
+  color: var(--text-color);
   font-size: 1.7rem;
   margin: 0 1rem;
 }
@@ -8,7 +10,7 @@
   right: 2rem;
 }
 .header .navbar a:hover {
-  color: var(--orange);
+  color: var(--cyan);
 }
 
 @media (max-width: 768px) {
@@ -23,7 +25,7 @@
     top: 110%;
     right: -110%;
     width: 30rem;
-    background: #fff;
+    background: var(--background-color-1);
     border-radius: 0.5rem;
   }
   .header .navbar a {

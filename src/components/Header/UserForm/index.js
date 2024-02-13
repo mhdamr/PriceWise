@@ -1,4 +1,5 @@
-// User Form
+//   Code for \PriceWise\src\components\Header\UserForm\index.js
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './UserForm.css';
