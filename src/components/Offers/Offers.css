@@ -1,4 +1,4 @@
-/* Code for \PriceWise\src\components\Offers\Offers.css */
+/*   Code for \PriceWise\src\components\Offers\Offers.css   */
 
 .offers {
     display: flex;
@@ -10,12 +10,12 @@
   }
   
   .offers h1 {
-    font-size: 2.5rem;
-    color: var(--orange);
+    font-size: 3.5rem;
+    color: var(--cyan);
   }
   
   .offers p {
-    font-size: 1.5rem;
-    color: var(--black);
+    font-size: 2.5rem;
+    color: var(--text-color);
   }
-  
+

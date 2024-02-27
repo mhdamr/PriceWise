@@ -1,4 +1,4 @@
-/* Code for \PriceWise\src\components\Home\Home.css */
+/*   Code for \PriceWise\src\components\Home\Home.css   */
 
 .home {
     display: flex;
@@ -10,12 +10,13 @@
   }
   
   .home h1 {
-    font-size: 2.5rem;
-    color: var(--orange);
+    font-size: 3.5rem;
+    color: var(--cyan);
   }
   
   .home p {
-    font-size: 1.5rem;
-    color: var(--black);
+    font-size: 2.5rem;
+    color: var(--text-color);
   }
+  
   

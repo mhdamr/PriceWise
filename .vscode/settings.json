@@ -1,0 +1,13 @@
+{
+    "discord.detailsIdling": "Coding...",
+    "discord.lowerDetailsIdling": "Coding",
+    "discord.largeImageIdling": "Coding",
+    "discord.removeRemoteRepository": true,
+    "discord.swapBigAndSmallImage": false,
+    "discord.suppressNotifications": true,
+    "discord.lowerDetailsEditing": "Line: {current_line} of {total_lines}",
+    "discord.lowerDetailsNoWorkspaceFound": "No workspace found",
+    "discord.removeLowerDetails": false,
+    "discord.largeImage": "Editing a {LANG} file",
+    "discord.detailsEditing": "Editing {file_name}"
+}

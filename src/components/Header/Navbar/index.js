@@ -19,3 +19,4 @@ export default function Navbar(props) {
 Navbar.propTypes = {
   active: PropTypes.bool,
 };
+

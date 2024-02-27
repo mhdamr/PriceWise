@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 :root {
   --orange: #ff7800;
-  --cyan: #00ADB5;
+  --cyan: #2898BD;
   --black: #130f40;
   --light-color: #666;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
@@ -13,13 +13,13 @@
 
 
   /*   Custome Colors for Dark Mode  */
-  --background-color-dark: #393E46;
-  --background-color-darker: #222831;
+  --background-color-dark: #161A1D ;
+  --background-color-darker: #1D2125;
   --text-color-dark: #EEEEEE;
 
  /*   Custome Colors for Dark Mode  */
-  --background-color-light: #dddddd;
-  --background-color-lighter: #ebebeb;
+  --background-color-light: #f2f2f2;
+  --background-color-lighter: #ffffff;
   --text-color-light: #000;
 }
 
@@ -136,3 +136,4 @@ body {
   }
 
 }
+

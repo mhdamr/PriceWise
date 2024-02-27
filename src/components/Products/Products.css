@@ -1,0 +1,131 @@
+/*   Code for \PriceWise\src\components\Products\Products.css   */
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.products h1 {
+  font-size: 3.5rem;
+  color: var(--cyan);
+}
+
+.products p {
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+.sort-container {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  z-index: 10; /* Bring the dropdown above other content */
+  padding-top: 100px;
+}
+
+.sort-container select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--background-color-1);
+  cursor: pointer; /* Add pointer cursor for better UX */
+  background: var(--background-color-1);
+  color: var(--text-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px;
+    padding-top: 10px;
+  }
+
+  
+  
+  .product-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligns children to start and end */
+    height: 100%; /* Ensure it takes full height to allow space-between to work */
+    border: 1px solid var(--background-color-1);
+    background: var(--background-color-1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .product-box h2 {
+    font-size: 17px;
+    color: var(--cyan);
+  }
+
+  .product-box h3 {
+    font-size: 18px;
+    color: var(--text-color);
+    font-weight: 500;
+    height: 100%;
+  }
+
+  .product-box img.product-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+  }
+
+  .price-and-unit {
+    margin-top: 8px;
+    align-items: flex-end;
+  }
+
+  p.price {
+    display: inline-flex;
+    margin-right: 8px;
+    color: var(--cyan);
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  p.unit {
+    display: inline-flex;
+    color: var(--cyan);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+
+
+  .product-details {
+    margin-left: 60px;
+    margin-bottom: 20px;
+    z-index: 10; /* Bring the dropdown above other content */
+    padding-top: 100px;
+  }
+
+  .product-details h1 {
+    color: var(--text-color);
+  }
+
+  .spinner-container {
+    margin-left: 60px;
+    margin-bottom: 20px;
+    padding-top: 100px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
