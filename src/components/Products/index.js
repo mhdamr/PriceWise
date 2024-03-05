@@ -40,53 +40,79 @@ const Products = () => {
   }, [searchTerm]);
 
   useEffect(() => {
-    // Only sort products when sortType is 'lowToHigh'
+    
     if (sortType === 'lowToHigh') {
       const sortedProducts = [...products].sort((a, b) => {
-        const priceA = parseFloat(a.price.replace(/[£]/g, ''));
-        const priceB = parseFloat(b.price.replace(/[£]/g, ''));
-        return priceA - priceB;
+      const priceA = parseFloat(a.price.replace(/[£]/g, ''));
+      const priceB = parseFloat(b.price.replace(/[£]/g, ''));
+      return priceA - priceB; // Ascending order
       });
       setProducts(sortedProducts);
     }
+    
+    else if (sortType === 'highToLow') {
+        const sortedProducts = [...products].sort((a, b) => {
+        const priceA = parseFloat(a.price.replace(/[£]/g, ''));
+        const priceB = parseFloat(b.price.replace(/[£]/g, ''));
+        return priceB - priceA; // Descending order
+        });
+      setProducts(sortedProducts);
+    }
+
   }, [sortType, products]); // Make sure to add products to the dependency array
 
   if (!searchTerm) {
-    return <div className="products">
-      <h1>Products</h1>
-      <p>Please enter a product name in the search bar above.</p>
-    </div>;
+    return (
+        <div className="products">
+          <h1>Products</h1>
+          <p>Please enter a product name in the search bar above.</p>
+        </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <main className="spinner-container">
+        <div className='spinner-box'>
+          <div className='spinner'></div>
+        </div>
+      </main>
+    );
   }
 
   return (
-    <>
-      
-      <div className="sort-container">
-        <select value={sortType} onChange={(e) => setSortType(e.target.value)}>
-          <option value="relevance">Relevance</option>
-          <option value="lowToHigh">Price: Low to High</option>
-        </select>
-      </div>
-    <div className="products-grid">
-      {loading ? <div className="spinner"></div> : products.map((product, index) => (
-        <div key={index} className="product-box">
-          <img src={product.image} alt={product.title} className="product-image" />
-
-          <h3>
-
-          <Link to={`/product-details/${encodeURIComponent(product.product_link)}`}>
-            {product.title}
-          </Link>
-
-          </h3>
-          <div className="price-and-unit">
-            <p className="price">{product.price} </p>
-            <p className="unit">{product.unit} </p>
-          </div>
+    <main className="products-content">
+      {/* Conditionally render sort container if there are products */}
+      {products.length > 0 && (
+        <div className="sort-container">
+          <select value={sortType} onChange={(e) => setSortType(e.target.value)}>
+            <option value="relevance">Relevance</option>
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+          </select>
         </div>
-      ))}
-    </div>
-    </>
+      )}
+      <div className="products-grid">
+        {loading ? (
+          <div className="spinner"></div>
+        ) : (
+          products.map((product, index) => (
+            <div key={index} className="product-box">
+              <img src={product.image} alt={product.title} className="product-image" />
+              <h3>
+                <Link to={`/product-details/${encodeURIComponent(product.product_link)}`}>
+                  {product.title}
+                </Link>
+              </h3>
+              <div className="price-and-unit">
+                <p className="price">{product.price}</p>
+                <p className="unit">{product.unit}</p>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </main>
   );
 };
 

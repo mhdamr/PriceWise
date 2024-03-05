@@ -1,5 +1,9 @@
 /*   Code for \PriceWise\src\components\Products\Products.css   */
 
+.products-content {
+  padding-top: 100px; /* Adjust based on your header's height */
+}
+
 .products {
   display: flex;
   flex-direction: column;
@@ -22,8 +26,6 @@
 .sort-container {
   margin-left: 60px;
   margin-bottom: 20px;
-  z-index: 10; /* Bring the dropdown above other content */
-  padding-top: 100px;
 }
 
 .sort-container select {
@@ -62,7 +64,7 @@
     color: var(--cyan);
   }
 
-  .product-box h3 {
+  .product-box h3 a {
     font-size: 18px;
     color: var(--text-color);
     font-weight: 500;
@@ -106,22 +108,22 @@
     animation: spin 2s linear infinite;
   }
 
-
-  .product-details {
-    margin-left: 60px;
-    margin-bottom: 20px;
-    z-index: 10; /* Bring the dropdown above other content */
-    padding-top: 100px;
-  }
-
-  .product-details h1 {
-    color: var(--text-color);
-  }
-
   .spinner-container {
-    margin-left: 60px;
-    margin-bottom: 20px;
-    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this value based on your layout needs */
+  }
+  
+  .spinner-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-1); /* Adjust color as needed */
+    border-radius: 10px; /* Rounded corners for the spinner box */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    margin: auto; /* Center the box */
   }
   
   @keyframes spin {
