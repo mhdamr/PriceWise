@@ -2,32 +2,33 @@
 
 .header .user-form {
   position: absolute;
-  top: 110%;
+  top: 120%;
   right: -110%;
   width: 35rem;
   border-radius: 0.5rem;
   text-align: center;
   padding: 2rem;
   background: var(--background-color-1);
-
+  border: 1px solid var(--border-color);
 }
 .header .user-form.active {
   right: 2rem;
+  border: 1px solid var(--border-color);
 }
 .header .user-form h3 {
-  text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--text-color);
 }
 .header .user-form .box input {
   width: 100%;
   margin: 1rem 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: none;
   color: var(--text-color);
   padding: 1rem;
   background: var(--background-color-2);
   border-radius: 0.5rem;
+  border: solid 1px var(--border-color);
 }
 .header .user-form p {
   font-size: 1.4rem;
@@ -36,8 +37,54 @@
 .header .user-form p a {
   color: var(--cyan);
   text-decoration: underline;
-}
-.header .user-form button:hover {
-  background: var(--cyan);
+  font-weight: 500;
 }
 
+.header .user-form p.error-message {
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.user-form.active .btn {
+  margin: 10px 10px 17px 10px;
+  font-weight: 500;
+  padding: 8px 15px;
+}
+
+.user-form.active .logout.btn {
+  color: var(--background-color-1);
+  background-color: rgb(172, 25, 25);
+  border: none;
+  font-weight: 900;
+}
+
+.user-form.active .logout.btn:hover {
+  border: none;
+  color: var(--background-color-1);
+  background-color: rgb(136, 20, 20);
+  transition-duration: 0.3s;
+  font-weight: 900;
+}
+
+
+.user-form.active .profile.btn {
+  background-color: var(--cyan);
+  color: var(--background-color-1);
+  border: none;
+  font-weight: 900;
+}
+
+.user-form.active .profile.btn:hover {
+  border: none;
+  color: var(--background-color-1);
+  background-color: var(--darker-cyan);
+  transition-duration: 0.3s;
+  font-weight: 900;
+}
+
+
+.user-form.active .btn:hover {
+  font-weight: 500;
+}

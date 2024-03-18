@@ -12,6 +12,7 @@
     z-index: 9999;
     background: var(--background-color-1);
     box-shadow: var(--box-shadow);
+    border-bottom: 1px solid var(--border-color);
   }
   .header .logo {
     font-size: 2.5rem;
@@ -26,12 +27,13 @@
     height: 4.5rem;
     width: 4.5rem;
     line-height: 4.5rem;
-    margin-left: 0.5rem;
+    margin-left: 0.8rem;
     cursor: pointer;
     text-align: center;
     font-size: 2rem;
     background: var(--background-color-2);
     border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
   }
   .header .icons button .fa-icon {
     color: var(--text-color);

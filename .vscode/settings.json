@@ -9,5 +9,9 @@
     "discord.lowerDetailsNoWorkspaceFound": "No workspace found",
     "discord.removeLowerDetails": false,
     "discord.largeImage": "Editing a {LANG} file",
-    "discord.detailsEditing": "Editing {file_name}"
+    "discord.detailsEditing": "Editing {file_name}",
+    "vscode-pets.theme": "beach",
+    "vscode-pets.throwBallWithMouse": true,
+    "vscode-pets.petSize": "nano",
+    "vscode-pets.position": "explorer"
 }

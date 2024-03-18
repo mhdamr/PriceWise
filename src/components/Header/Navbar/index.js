@@ -10,7 +10,6 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar ${active ? 'active' : ''}`}>
       <NavLink to="/" className={({ isActive }) => (isActive ? 'activeLink' : '')}>Home</NavLink>
-      <NavLink to="/offers" className={({ isActive }) => (isActive ? 'activeLink' : '')}>Offers</NavLink>
       <NavLink to="/products" className={({ isActive }) => (isActive ? 'activeLink' : '')}>Products</NavLink>
     </nav>
   );

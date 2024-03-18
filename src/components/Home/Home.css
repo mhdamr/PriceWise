@@ -15,8 +15,9 @@
   }
   
   .home p {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--text-color);
+    padding: 0px 300px;
   }
   
   

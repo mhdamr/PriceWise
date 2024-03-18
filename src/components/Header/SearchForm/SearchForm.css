@@ -1,50 +1,97 @@
 /*   Code for \PriceWise\src\components\Header\SearchForm\SearchForm.css   */
 
-.header .search-form {
+.search-and-store {
+  display: none; /* Hidden by default, shown when active */
   position: absolute;
-  top: 110%;
-  right: -110%;
-  height: 5rem;
-  width: 50rem;
-  background: var(--background-color-1);
-  border-radius: 0.5rem;
-  box-shadow: var(--box-shadow);
-}
-.header .search-form.active {
-  right: 2rem;
-}
-.header .search-form.active button {
-  background: none;
-}
-.header .search-form #search-box {
-  height: 100%;
-  width: 100%;
-  text-transform: none;
-  padding: 0 1.5rem;
-  font-size: 1.6rem;
-  border-radius: 0.5rem;
-  background: var(--background-color-1);
-  color: var(--text-color-for-root);
-}
-.header .search-form label {
-  display: flex;
+  top: 110%; /* Adjust based on your header's height */
+  right: 2rem; /* Adjust to align properly */
   align-items: center;
-  height: inherit;
-  overflow: hidden;
-}
-.header .search-form .search-icon {
-  font-size: 2.5rem;
-  padding-right: 1.5rem;
-  color: var(--text-color);
-  cursor: pointer;
-  font-weight: bold;
-}
-.header .search-form .search-icon:hover {
-  color: var(--cyan);
-}
-@media (max-width: 768px) {
-  .header .search-form {
-    width: 90%;
-  }
+  gap: 10px; /* Gap between store select and search form */
+  padding: 0.5rem;
 }
 
+.search-and-store.active {
+  display: flex;
+}
+
+.store-select {
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.8rem;
+  background-color: var(--background-color-1);
+  height: 5rem;
+  width: 14rem;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.store-select select {
+  background-color: var(--background-color-1);
+  color: var(--text-color);
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.store-select select:hover {
+  transition: 0.3s;
+  color: var(--cyan);
+}
+
+.store-select select:focus {
+  color: var(--cyan);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color-1);
+  border-radius: 0.8rem;
+  flex-grow: 1;
+  height: 5rem;
+  width: 50rem;
+  flex-grow: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+#search-box {
+  flex-grow: 1;
+  padding: 0.5rem;
+  color: var(--text-color);
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: 0.3s;
+  padding: 0px 5px;
+}
+
+.search-button:hover {
+  transition: 0.3s;
+  color: var(--cyan);
+}
+
+/* Style adjustments for responsiveness */
+@media (max-width: 768px) {
+  .search-and-store {
+    width: calc(100% - 4rem); /* Full width minus padding for mobile */
+    right: 1rem; /* Adjust based on mobile layout */
+    top: 100%;
+  }
+
+  .search-form {
+    width: calc(100% - 20rem); /* Full width minus padding for mobile */
+  }
+
+  #search-box {
+    width: calc(100% - 20rem); /* Full width minus padding for mobile */
+  } 
+
+}

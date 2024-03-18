@@ -1,7 +1,9 @@
 //   Code for \PriceWise\src\components\Header\index.js
 
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faShoppingBasket,
@@ -9,7 +11,8 @@ import {
   faSearch,
   faUser,
   faMoon, 
-  faSun 
+  faSun, 
+  faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
 import SearchForm from './SearchForm';
 import UserForm from './UserForm';
@@ -22,6 +25,17 @@ export default function Header() {
   const [activeSearch, setActiveSearch] = useState(false);
   const [activeUserForm, setActiveUserForm] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  const [user, setUser] = useState(null); // State to hold user info
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe(); // Clean up subscription
+  }, []);
+
   window.onscroll = () => {
     setActiveUserForm(false);
     setActiveSearch(false);
@@ -61,6 +75,15 @@ export default function Header() {
         <button type="button" id="search-btn" onClick={handleSearchButton}>
           <FontAwesomeIcon className="fa-icon" icon={faSearch} />
         </button>
+        {user && ( // Conditionally render if user is not null
+          <button
+            type="button"
+            id="grocery-list-btn"
+            onClick={() => navigate('/grocery-list')}
+          >
+            <FontAwesomeIcon className="fa-icon" icon={faShoppingCart} />
+          </button>
+        )}
         <button type="button" id="user-btn" onClick={handleUserFormButton}>
           <FontAwesomeIcon className="fa-icon" icon={faUser} />
         </button>
